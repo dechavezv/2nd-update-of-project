@@ -1,0 +1,11 @@
+def get_GC(fname)
+  from Bio import SeqIO
+  from Bio.SeqUtils import GC
+  gc_values = sorted(GC(rec.seq) for rec in SeqIO.parse("{}.fa(fname)", "fasta"))
+  import pylab
+  pylab.plot(gc_values)
+  pylab.title("%i Reithrodontomys\nGC%% %0.1f to %0.1f" \
+            % (len(gc_values),min(gc_values),max(gc_values)))
+  pylab.xlabel("Species")
+  pylab.ylabel("GC%")
+  pylab.show()
