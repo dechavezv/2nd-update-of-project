@@ -1,0 +1,8 @@
+def transform(“file”, “nexus”):
+  import Bio
+  from Bio.Seq import Seq
+  from Bio import SeqIO
+  from Bio.Alphabet import IUPAC
+  from Bio.Alphabet import IUPAC
+  from Bio.Alphabet.IUPAC import ambiguous_dna
+  SeqIO.convert("{}.fa", "nexus", "Reithro.fas", "fasta", alphabet = IUPAC.ambiguous_dna)
